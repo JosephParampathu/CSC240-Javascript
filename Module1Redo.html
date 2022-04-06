@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Name: Joseph Parampathu
+Date: 05/21/2021
+-->
+
+<html>
+<head>
+	<title>Pay Calculator</title>
+	<meta charset="utf-8">
+</head>
+<!-- Text Prompts for Form -->
+	<body>
+			<h1>Pay Calculator</h1>
+			<form action="" method="POST" name="salary" id="salary">
+				Hourly Pay Rate:<br>
+				<input type="text" id="hourlyRate" name="hourlyRate" required>
+				<br>
+				Hours Worked for the Week:<br>
+				<input type="text" id="hours" name="hours" required>
+				<br>
+				Overtime Hours Worked:<br>
+				<input type="text" id="overtime" name="overtime" required>
+				<br>
+				Overtime Hourly Pay Rate:<br>
+				<input type="text" id="overtimeRate" name="overtimeRate" required>
+				<br>
+				Tax Rate (As a percent):<br>
+				<input type="text" id="taxRate" name="taxRate" required>
+				<br>
+				Health Insurance Deduction:<br>
+				<input type="text" id="healthInsurance" name="healthInsurance" required>
+				<br>
+				<br>
+				<input type="button" onClick="grossPay()" Value="Gross Pay" />
+				<br>
+				<input type="button" onClick="netPay()" Value="Net Pay" />
+			</form>
+
+			<p> Pay is: $
+				<span id="result"></span>
+			</p>
+
+		<!-- Javascript Functions are below -->
+		<script type="text/javascript">
+
+		//This is the function for Gross Pay. It will be utlized when we click the "Gross Pay" button
+			function grossPay()
+			{
+				var hourlyRate = document.getElementById("hourlyRate").value;
+				var hours = document.getElementById("hours").value;
+				var overtime = document.getElementById("overtime").value;
+				var overtimeRate = document.getElementById("overtimeRate").value;
+
+				var grossPay = (hourlyRate*hours) + (overtimeRate*overtime);
+				var gross = grossPay.toFixed(2);
+
+				document.getElementById("result").innerHTML = gross;
+			}
+
+			//This is the function for Net Pay. It will be utilized when we click the "Net Pay" button
+			function netPay()
+			{
+				var hourlyRate = document.getElementById("hourlyRate").value;
+				var hours = document.getElementById("hours").value;
+				var overtime = document.getElementById("overtime").value;
+				var overtimeRate = document.getElementById("overtimeRate").value;
+
+				var taxRate = document.getElementById("taxRate").value
+				var healthInsurance = document.getElementById("healthInsurance").value;
+
+				var grossPay = (hourlyRate*hours)+(overtimeRate*overtime);
+				var tax = grossPay * (taxRate / 100);
+
+				var deductions = tax + healthInsurance;
+
+				var netPay = grossPay - deductions;
+				var net = netPay.toFixed(2);
+
+				document.getElementById("result").innerHTML = net;
+			}
+		</script>
+	</body>
+</html>

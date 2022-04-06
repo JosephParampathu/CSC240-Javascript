@@ -1,0 +1,66 @@
+<!--
+Name: Joseph Parampathu
+Date: 06/16/2021
+Assignment Title: Week 6 Programming Lab Part B
+-->
+<html>
+
+<head>
+  <title>Sign In</title>
+</head>
+
+<body>
+  <center>
+  <h2>Sign In Form</h2>
+<!--This is the sign in form-->
+<div>
+  <form name="signinform" action="mailto:jparampathu001@my.wilmu.edu"
+        method="post" enctype="text/plain">
+    <!--This fieldset is for login information-->
+    <fieldset><legend>Login Credentials</legend>
+    <input type="text" name ="Username" id="username"
+      size ="20" value="Username">
+    <!--This is the button the user can use to validate the username-->
+    <input type="button" onclick="validateUserName()"
+        value="Validate Username">
+    <input type="text" name ="Password" id="password"
+      size ="20" value="Password">
+    <!--This is the button the user can use to validate the password-->
+    <input type="button" onclick="validatePassword()"
+      value="Validate Password">
+    </fieldset>
+    <!--This fieldset boxes in the first group in the name section-->
+    <fieldset><legend>Name</legend>
+    <input type="text" name ="First Name" id="firstname"
+      size ="20" value="First Name">
+    <input type="text" name ="Last Name" id="lastname"
+      size ="20" value="Last Name">
+    </fieldset>
+    <!--This fieldset boxes in the contact information-->
+    <fieldset><legend>Contact Info</legend>
+    <input type="text" name ="Street Address" id="streetaddress"
+      size ="20" value="Street Address">
+    <input type="text" name ="City" id="city"
+      size ="20" value="City">
+    <input type="text" name ="Zip Code" id="zipcode"
+      size ="20" value="Zip Code">
+    <input type="text" name ="Email Address" id="emailaddress"
+      size ="20" value="Email Address">
+    <input type="text" name ="Phone Number" id="phonenumber"
+      size ="20" value="Phone Number">
+    <!--This is the button the user can use to validate the phone number-->
+    <input type="button" onclick="validateForm()"
+      value="Validate!">
+    </fieldset>
+    <!--This allows the user to reset the form if they make a mistake-->
+    <input type="reset" value="Reset the form">
+    <!--This allows the user to submit the form-->
+    <input type="submit" value="Submit the form">
+  </form>
+  </div>
+  </center>
+<!--This tells the computer where to find the javascript-->
+  <script type="text/JavaScript" src="js/main.js"></script>
+</body>
+
+</html>
